@@ -11,7 +11,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 gem "redis", ">= 4.0.1"
-gem "sidekiq", "~> 6.5"
+gem "sidekiq"
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -40,3 +40,4 @@ group :test do
 end
 
 gem "view_component"
+gem "tailwindcss-rails"
