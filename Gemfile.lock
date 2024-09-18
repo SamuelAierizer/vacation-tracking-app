@@ -269,10 +269,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sidekiq (6.5.5)
-      connection_pool (>= 2.2.2)
-      rack (~> 2.0)
-      redis (>= 4.5.0)
+    sidekiq (7.3.2)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -339,7 +341,7 @@ DEPENDENCIES
   rubocop-rspec (~> 2.0)
   rubocop-thread_safety
   selenium-webdriver
-  sidekiq (~> 6.5)
+  sidekiq (~> 7.3)
   sprockets-rails
   stimulus-rails
   turbo-rails

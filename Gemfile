@@ -11,7 +11,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 gem "redis", ">= 4.0.1"
-gem "sidekiq", "~> 6.5"
+gem "sidekiq", "~> 7.3"
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
