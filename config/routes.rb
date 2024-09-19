@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :vacation_requests do
     patch "update_status"
   end
+  post "sync_users", to: "users#sync"
   resources :users
   get "dashboard/index"
   get "dashboard/admin"

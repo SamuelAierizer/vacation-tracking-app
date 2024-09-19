@@ -22,12 +22,14 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman"
   gem "bundler-audit"
+  gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-performance", "~> 1.5"
   gem "rubocop-rails", "~> 2.3"
   gem "rubocop-rspec", "~> 2.0"
   gem "rubocop-thread_safety"
   gem "rubocop-rails-omakase"
+  gem "webmock"
 end
 
 group :development do
@@ -41,3 +43,5 @@ end
 
 gem "view_component"
 gem "tailwindcss-rails"
+
+gem "httparty"

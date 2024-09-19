@@ -57,6 +57,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # POST /users/sync
+  def sync
+    SyncUsersJob.new.perform
+    head :ok
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
