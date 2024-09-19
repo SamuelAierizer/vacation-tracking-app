@@ -83,8 +83,20 @@ We will be deploying with `kamal` but no further details provided.
 On new deploy, don't forget `docker network create --driver bridge private`
 
 
+# Screenshots
+
+Some screenshots about project
+
+![Admin](./app/assets/images/screenshots/admin.png)
+
+![Users](./app/assets/images/screenshots/users.png)
+
+![Vacations](./app/assets/images/screenshots/vacations.png)
+
+
 # Future Expansion
 
-1. Add authentication and authorization (devise and pundit)
-2. Add a Calendar view where you can see the vacation requests (similar to Bamboohr)
-3. Add Action Text and Active Storage
+1. Add notifications system to inform user when the background job finished
+2. Add authentication and authorization (devise and pundit)
+3. Add a Calendar view where you can see the vacation requests (similar to Bamboohr)
+4. Add Action Text and Active Storage
