@@ -25,7 +25,6 @@ brew doctor
 brew install coreutils curl git openssl@3
 ```
 
-****
 
 ## Install asdf and ruby
 
@@ -53,7 +52,6 @@ gem install rails
 
 For Mac you can use: `brew install asdf`, the rest is the same. 
 
-****
 
 ## Setting up the project and starting the server
 
@@ -70,7 +68,6 @@ bundle e rails db:migrate     # run the migrations
 ./bin/dev                     # starts the server (Webserver, Sidekiq for jobs, Tailwind watcher for live CSS updates)
 ```
 
-****
 
 ## Runing the tests
 
@@ -78,10 +75,15 @@ bundle e rails db:migrate     # run the migrations
 bundle exec rspec
 ```
 
-****
 
 ## Deployment
 
 We will be deploying with `kamal` but no further details provided.
  
 On new deploy, don't forget `docker network create --driver bridge private`
+
+
+# Future Expansion
+
+1. Add authentication and authorization (devise and pundit)
+2. Add a Calendar view where you can see the vacation requests (similar to Bamboohr)
