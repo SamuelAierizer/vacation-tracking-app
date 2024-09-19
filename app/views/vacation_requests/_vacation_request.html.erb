@@ -1,27 +1,32 @@
 <div id="<%= dom_id vacation_request %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= vacation_request.user %>
-  </p>
+  <%= render Card.new do |component| %>
+    <%= component.with_body do %>
+      <%= link_to vacation_request, class: "flex flex-col gap-2 hover:text-black", data: { turbo_action: :replace } do %>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">User:</strong>
+          <%= vacation_request.user.name %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Start date:</strong>
-    <%= vacation_request.start_date %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Start date:</strong>
+          <%= vacation_request.start_date %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">End date:</strong>
-    <%= vacation_request.end_date %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">End date:</strong>
+          <%= vacation_request.end_date %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Status:</strong>
-    <%= vacation_request.status %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Status:</strong>
+          <%= vacation_request.status %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= vacation_request.description %>
-  </p>
-
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Description:</strong>
+          <%= vacation_request.description %>
+        </p>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

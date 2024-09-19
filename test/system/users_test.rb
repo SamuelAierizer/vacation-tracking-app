@@ -15,7 +15,7 @@ class UsersTest < ApplicationSystemTestCase
     click_on "New user"
 
     fill_in "Date of birth", with: @user.date_of_birth
-    fill_in "Departament", with: @user.departament_id
+    fill_in "department", with: @user.department_id
     fill_in "Email", with: @user.email
     fill_in "Employee", with: @user.employee_id
     fill_in "End date", with: @user.end_date
@@ -33,7 +33,7 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Edit this user", match: :first
 
     fill_in "Date of birth", with: @user.date_of_birth.to_s
-    fill_in "Departament", with: @user.departament_id
+    fill_in "department", with: @user.department_id
     fill_in "Email", with: @user.email
     fill_in "Employee", with: @user.employee_id
     fill_in "End date", with: @user.end_date.to_s

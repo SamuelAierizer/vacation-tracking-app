@@ -3,7 +3,7 @@ class VacationRequestsController < ApplicationController
 
   # GET /vacation_requests or /vacation_requests.json
   def index
-    @vacation_requests = VacationRequest.all
+    @vacation_requests = VacationRequest.all.includes(:user)
   end
 
   # GET /vacation_requests/1 or /vacation_requests/1.json
@@ -60,11 +60,11 @@ class VacationRequestsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacation_request
-      @vacation_request = VacationRequest.find(params[:id])
+      @vacation_request = VacationRequest.includes(:user).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def vacation_request_params
-      params.require(:vacation_request).permit(:user, :start_date, :end_date, :status, :description)
+      params.require(:vacation_request).permit(:user_id, :start_date, :end_date, :status, :description)
     end
 end

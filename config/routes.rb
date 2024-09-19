@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :departments
   resources :vacation_requests
   resources :users
   get "dashboard/index"

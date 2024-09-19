@@ -1,0 +1,12 @@
+<div id="<%= dom_id department %>">
+  <%= render Card.new do |component| %>
+    <%= component.with_body do %>
+      <%= link_to department, data: { turbo_action: :replace } do %>
+        <span class="flex flex-row gap-2">
+          <strong class="block font-medium mb-1">Name:</strong>
+          <%= department.name %>
+        </span>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -8,7 +8,7 @@ one:
   role: MyString
   start_date: 2024-09-18 10:35:51
   end_date: 2024-09-18 10:35:51
-  departament_id: 1
+  department_id: 1
 
 two:
   employee_id: MyString
@@ -18,4 +18,4 @@ two:
   role: MyString
   start_date: 2024-09-18 10:35:51
   end_date: 2024-09-18 10:35:51
-  departament_id: 1
+  department_id: 1

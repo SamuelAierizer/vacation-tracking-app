@@ -1,42 +1,47 @@
 <div id="<%= dom_id user %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Employee:</strong>
-    <%= user.employee_id %>
-  </p>
+  <%= render Card.new do |component| %>
+    <%= component.with_body do %>
+      <%= link_to user, class: "flex flex-col gap-4 hover:text-black",data: { turbo_action: :replace } do %>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Employee:</strong>
+          <%= user.employee_id %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= user.name %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Name:</strong>
+          <%= user.name %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
-    <%= user.email %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Email:</strong>
+          <%= user.email %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date of birth:</strong>
-    <%= user.date_of_birth %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Date of birth:</strong>
+          <%= user.date_of_birth %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Role:</strong>
-    <%= user.role %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Role:</strong>
+          <%= user.role %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Start date:</strong>
-    <%= user.start_date %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">Start date:</strong>
+          <%= user.start_date %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">End date:</strong>
-    <%= user.end_date %>
-  </p>
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">End date:</strong>
+          <%= user.end_date %>
+        </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Departament:</strong>
-    <%= user.departament_id %>
-  </p>
-
+        <p class="flex flex-row gap-2">
+          <strong class="block font-medium">department:</strong>
+          <%= user.department.name %>
+        </p>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

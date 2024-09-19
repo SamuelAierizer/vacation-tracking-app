@@ -1,15 +1,19 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<%= turbo_frame_tag :main_content do %>
+  <div class="mx-auto md:w-2/3 w-full flex">
+    <div class="mx-auto">
+      <% if notice.present? %>
+        <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+      <% end %>
 
-    <%= render @vacation_request %>
+      <%= render @vacation_request %>
 
-    <%= link_to "Edit this vacation request", edit_vacation_request_path(@vacation_request), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to vacation requests", vacation_requests_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this vacation request", @vacation_request, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <div class="mt-8">
+        <%= link_to "Edit request", edit_vacation_request_path(@vacation_request), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", data: { turbo_action: :replace } %>
+        <%= link_to "Back to list", vacation_requests_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", data: { turbo_action: :replace } %>
+        <div class="inline-block ml-2">
+          <%= button_to "Destroy request", @vacation_request, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium", data: { turbo_action: :replace } %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
