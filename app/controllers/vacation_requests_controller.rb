@@ -47,6 +47,19 @@ class VacationRequestsController < ApplicationController
     end
   end
 
+  # PATCH/PUT /vacation_requests/1/update_status
+  def update_status
+    @vacation_request = VacationRequest.find(params[:vacation_request_id])
+
+    if @vacation_request.update(status: params[:status])
+      VacationRequestMailer.with(employee: @vacation_request.user, request: @vacation_request).status_notification.deliver_now
+
+      redirect_to dashboard_admin_path, notice: "Vacation request has been #{params[:status]}."
+    else
+      redirect_to dashboard_admin_path, error: "Faild to update status for vacation request."
+    end
+  end
+
   # DELETE /vacation_requests/1 or /vacation_requests/1.json
   def destroy
     @vacation_request.destroy!
@@ -60,7 +73,7 @@ class VacationRequestsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacation_request
-      @vacation_request = VacationRequest.includes(:user).find(params[:id])
+      @vacation_request = VacationRequest.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

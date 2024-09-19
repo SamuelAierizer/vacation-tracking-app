@@ -1,0 +1,31 @@
+<%= render Card.new do |component| %>
+  <%= component.with_body do %>
+    <div class="flex flex-col gap-2">
+      <%= content_tag :h2, "Employee: #{@employee.name}", class: "text-xl border-b pb-2" %>
+
+      <%= content_tag :span, "Vacations", class: "w-full text-xl" %>
+
+      <% if @employee.vacation_requests.any? %>
+        <ul class="flex flex-col gap-2 mt-2">
+          <% @employee.vacation_requests.each do |request| %>
+            <li class="flex flex-row justify-between flex-wrap">
+              <div>
+                <strong>Status:</strong> <%= request.status %> |
+                <strong>From:</strong> <%= request.start_date %> |
+                <strong>To:</strong> <%= request.end_date %>
+              </div>
+              <% if @type == :admin and request.status == 'pending' %>
+                <div>
+                  <%= link_to "Approve", vacation_request_update_status_path(request, status: 'approved'), class: "btn-approve", data: { turbo_action: :replace, turbo_method: :patch } %> |
+                  <%= link_to "Decline", vacation_request_update_status_path(request, status: 'rejected'), class: "btn-decline", class: "hover:text-red-600", data: { turbo_action: :replace, turbo_method: :patch } %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No vacation requests.</p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

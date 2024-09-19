@@ -1,7 +1,7 @@
 <div id="<%= dom_id user %>">
   <%= render Card.new do |component| %>
     <%= component.with_body do %>
-      <%= link_to user, class: "flex flex-col gap-4 hover:text-black",data: { turbo_action: :replace } do %>
+      <%= link_to user, class: "flex flex-col gap-2 hover:text-black text-wrap overflow-hidden",data: { turbo_action: :replace } do %>
         <p class="flex flex-row gap-2">
           <strong class="block font-medium">Employee:</strong>
           <%= user.employee_id %>

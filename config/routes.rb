@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :departments
-  resources :vacation_requests
+  resources :vacation_requests do
+    patch "update_status"
+  end
   resources :users
   get "dashboard/index"
   get "dashboard/admin"
