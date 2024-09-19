@@ -87,3 +87,4 @@ On new deploy, don't forget `docker network create --driver bridge private`
 
 1. Add authentication and authorization (devise and pundit)
 2. Add a Calendar view where you can see the vacation requests (similar to Bamboohr)
+3. Add Action Text and Active Storage
