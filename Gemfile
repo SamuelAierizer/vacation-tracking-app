@@ -25,7 +25,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-performance", "~> 1.5"
-  gem "rubocop-rails", "~> 2.3"
+  gem "rubocop-rails", "~> 2.26"
   gem "rubocop-rspec", "~> 2.0"
   gem "rubocop-thread_safety"
   gem "rubocop-rails-omakase"
